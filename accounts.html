@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login & Signup</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #8b5a2b;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            width: 300px;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #a8651d;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 6px;
+        }
+
+        button:hover {
+            background: #8b5a2b;
+        }
+
+        .link {
+            margin-top: 10px;
+            display: block;
+            color: blue;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- SIGN UP -->
+    <div id="signup">
+        <h2>Sign Up</h2>
+        <input type="text" id="su_username" placeholder="Username">
+        <input type="password" id="su_password" placeholder="Password">
+        <button onclick="signup()">Create Account</button>
+        <span class="link" onclick="showLogin()">Already have account? Sign In</span>
+    </div>
+
+    <!-- LOGIN -->
+    <div id="login" class="hidden">
+        <h2>Sign In</h2>
+        <input type="text" id="li_username" placeholder="Username">
+        <input type="password" id="li_password" placeholder="Password">
+        <button onclick="login()">Login</button>
+        <span class="link" onclick="showSignup()">Create account</span>
+    </div>
+
+</div>
+
+<script>
+function signup() {
+    let username = document.getElementById("su_username").value;
+    let password = document.getElementById("su_password").value;
+
+    if (username === "" || password === "") {
+        alert("Please fill all fields");
+        return;
+    }
+
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);
+
+    alert("Account Created Successfully!");
+    showLogin();
+}
+
+function login() {
+    let username = document.getElementById("li_username").value;
+    let password = document.getElementById("li_password").value;
+
+    let storedUser = localStorage.getItem("username");
+    let storedPass = localStorage.getItem("password");
+
+    if (username === storedUser && password === storedPass) {
+        alert("Login Successful!");
+        window.location.href = "home.html";
+    } else {
+        alert("Invalid Username or Password");
+    }
+}
+
+function showLogin() {
+    document.getElementById("signup").classList.add("hidden");
+    document.getElementById("login").classList.remove("hidden");
+}
+
+function showSignup() {
+    document.getElementById("login").classList.add("hidden");
+    document.getElementById("signup").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
