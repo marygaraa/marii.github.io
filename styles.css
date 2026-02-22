@@ -269,7 +269,7 @@
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
-    background: #FF3636;
+    background: red;
     color: white;
     border-radius: 8px;
     text-decoration: none; 
@@ -279,6 +279,7 @@
 .btns:hover {
     background: #white;
 }
+
 
 
 
