@@ -45,12 +45,21 @@
 </nav>
 </body>
 </nav>
-<section id="Home">
+ <section id="Home">
 <section class="vouchers">
   <div class="voucher">
       <h3>20% OFF</h3>
         <p>Min. Spend ₱26,000</p>
       <a href="voucher.html" class="btns">Claim</a>
+      <script>
+function claimVoucher(link) {
+    link.innerText = "Claimed";
+    link.classList.add("claimed");
+    link.removeAttribute("href"); 
+}
+</script>
+
+  </div>
 
   <div class="voucher">
     <h3>18% OFF</h3>
@@ -60,15 +69,16 @@
   
   <div class="voucher">
     <h3>15% OFF</h3>
-    <p>Min. Spend ₱17,000</p>
-   <a href="voucher.html" class="btns">Claim</a>
+    <p>Min. Spend ₱18,000</p>
+    <a href="voucher.html" class="btns">Claim</a>
   </div>
 
   <div class="voucher">
     <h3>10% OFF</h3>
     <p>Min. Spend ₱15,000</p>
-    <a href="voucher.html" class="btns">Claim</a>
+   <a href="voucher.html" class="btns">Claim</a>
   </div>
+</section>
 </section>
 <section class="section">
     <h2>Shoulder Bags</h2>
@@ -130,6 +140,7 @@
 
 </body>
     </html>
+
 
 
 
