@@ -265,8 +265,20 @@
     color:#000;
 }
 
-  
+  .btns {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #a8651d;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none; 
+    font-size: 15px;
+}
 
+.btns:hover {
+    background: #8b5a2b;
+}
 
 
 
