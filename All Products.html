@@ -80,7 +80,7 @@
             <div class="card-content">
                 <h3>Luxuria Grey Backpack</h3>
                 <p class="price">₱19,000</p>
-                <button class="btn add-cart">Add to Cart</button>
+                <button onclick="addToCart()" class="btn add-cart">Add to Cart</button>
             </div>
         </div>
 
@@ -452,9 +452,31 @@
                 <button class="btn add-cart">Add to Cart</button>
             </div>
         </div>
+        
+<script>
+let cart = 0;
+
+function addToCart() {
+    cart++;
+    document.getElementById("cart-count").innerText = cart;
+}
+
+function claimVoucher() {
+    let btn = document.getElementById("voucherBtn");
+    btn.innerText = "Claimed";
+    btn.classList.add("claimed");
+}
+
+function logout() {
+    localStorage.removeItem("loggedIn");
+    window.location.href = "login.html";
+}
+</script>
+
 </body>
 
 </html>
+
 
 
 
